@@ -1,0 +1,41 @@
+html {
+  background-color: aqua;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  text-decoration: underline;
+}
+
+p {
+  font-family: "Courier New", Courier, monospace;
+}
+
+a:visited {
+  color: red;
+}
+
+/* p:hover {
+  font-size: 40px;
+  cursor: copy;
+} */
+
+.paragraphe-rouge {
+  color: red;
+}
+
+#paragraphe-special {
+  font-size: 30px;
+}
+
+.italic {
+  font-style: italic;
+}
+
+.no-underline {
+  text-decoration: none;
+}
