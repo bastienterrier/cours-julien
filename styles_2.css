@@ -2,3 +2,41 @@ header {
   background-color: khaki;
   padding: 30px;
 }
+
+#menu,
+#menu ul {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  text-align: center;
+}
+
+#menu li {
+  /* on place les liens du menu horizontalement */
+  display: inline-block;
+  /* position: relative; */
+}
+
+#menu ul li {
+  /* on enlève ce comportement pour les liens du sous menu */
+  display: inherit;
+}
+
+#menu a {
+  text-decoration: none;
+  display: block;
+  color: #000;
+}
+
+#menu ul {
+  position: absolute;
+  /* on cache les sous menus complètement */
+  display: none;
+  text-align: left;
+  z-index: 1000;
+}
+
+#menu li:hover ul {
+  /* Au survol des li du menu on affiche les sous menus */
+  display: block;
+}

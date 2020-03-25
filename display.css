@@ -1,0 +1,79 @@
+body {
+  margin: 0;
+  position: relative;
+}
+
+header {
+  background-color: orange;
+  height: 5rem;
+  position: fixed;
+  width: 100%;
+}
+
+.login-section {
+  position: relative;
+
+  float: right;
+  width: 20rem;
+}
+
+.login-btn {
+  position: absolute;
+  right: 10px;
+}
+
+nav {
+  background-color: aqua;
+}
+
+section {
+  min-height: 15rem;
+  background-color: grey;
+
+  padding: 1rem;
+
+  display: flex;
+}
+
+article {
+  background-color: blue;
+  width: 100%;
+}
+
+aside {
+  background-color: red;
+  width: 20rem;
+  height: 100%;
+}
+
+footer {
+  background-color: greenyellow;
+  height: 5rem;
+}
+
+.pull-right {
+  color: green;
+  float: right;
+}
+
+main {
+  display: flex;
+  padding-top: 5rem;
+}
+
+.sections {
+  width: 100%;
+}
+
+.asides {
+  display: flex;
+  flex-direction: column;
+}
+
+.nav {
+  width: 20rem;
+}
+
+.custom-aside {
+  margin-left: auto;
+}
