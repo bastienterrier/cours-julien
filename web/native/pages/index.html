@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Site de test</title>
+    <link rel="stylesheet" href="../styles/style.css" />
+  </head>
+  <body>
+    <h1>Site de test</h1>
+
+    <section>
+      <h2>Actions</h2>
+      <button onclick="showUsers()">Show all users</button>
+    </section>
+
+    <!-- SIGN-IN FORM -->
+    <section>
+      <h2>Sign-in form</h2>
+      <form id="signin-form">
+        <input
+          id="givenName"
+          type="text"
+          placeholder="Saisissez votre prénom"
+          minlength="1"
+        />
+        <button type="submit">S'inscrire</button>
+      </form>
+    </section>
+
+    <!-- RESULT SECTION -->
+    <section>
+      <h2>Result</h2>
+      <div id="result-view"></div>
+    </section>
+
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"
+      integrity="sha512-bZS47S7sPOxkjU/4Bt0zrhEtWx0y0CRkhEp8IckzK+ltifIIE9EMIMTuT/mEzoIMewUINruDBIR/jJnbguonqQ=="
+      crossorigin="anonymous"
+    ></script>
+    <script src="../scripts/index.js"></script>
+  </body>
+</html>
