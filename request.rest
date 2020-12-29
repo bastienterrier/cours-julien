@@ -1,0 +1,14 @@
+GET http://localhost:3000/users
+
+###
+
+GET http://localhost:3000/users/99f6f2d8-8ab1-4060-bb44-6c33d2bc56f5
+
+###
+
+POST http://localhost:3000/users
+content-type: application/json
+
+{
+  "name": "Julien"
+}
