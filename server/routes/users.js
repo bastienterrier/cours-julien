@@ -4,26 +4,30 @@ const db = require('../database')
 const router = new Router()
 
 router.get('/', (_, res) => {
-  db.query('SELECT * FROM users;', null, (err, { rows }) => {
+  db.query('SELECT * FROM users;', null, (err, { rows: users }) => {
     if (err) {
-      res.status(400).send(err)
+      res.status(400).send(err.message)
+      return
     }
 
-    res.send(rows)
+    res.send(users)
   })
 })
 
-router.get('/:id', (req, res) => {
-  const userId = req.params.id
+router.get('/:userId', (req, res) => {
+  const userId = req.params.userId
 
   db.query('SELECT * FROM users WHERE id = $1;', [userId], (err, { rows }) => {
     if (err) {
       res.status(400).send(err)
+      return
     }
 
     const user = rows[0]
+    // if (user === undefined)
     if (!user) {
       res.status(404).send('This user does not exist')
+      return
     }
 
     res.send(user)
@@ -44,6 +48,7 @@ router.post('/', (req, res) => {
     (err, { rows }) => {
       if (err) {
         res.status(400).send(err)
+        return
       }
 
       res.send(rows[0])
