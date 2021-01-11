@@ -3,6 +3,17 @@ const db = require('../database')
 
 const router = new Router()
 
+const authMiddleware = (req, res, next) => {
+  if (req.headers['x-api-key'] === 'ma-cle') {
+    next()
+    return
+  }
+
+  res.status(401).send('Need authentication')
+}
+
+router.use(authMiddleware)
+
 router.get('/', (_, res) => {
   db.query('SELECT * FROM users;', null, (err, { rows: users }) => {
     if (err) {
@@ -34,9 +45,10 @@ router.get('/:userId', (req, res) => {
   })
 })
 
-router.post('/', (req, res) => {
+router.post('/', (req, res, next) => {
   const userName = req.body.name
 
+  // if (userName === undefined || userName === '') {
   if (!userName) {
     res.status(422).send('Field name is required')
     return
