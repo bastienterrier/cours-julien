@@ -24,14 +24,28 @@ function updateResultViewContent(content) {
 
 function postUser(userName) {
   return axios
-    .post(`${API_BASE_URL}/users`, {
-      name: userName,
-    })
+    .post(
+      `${API_BASE_URL}/users`,
+      {
+        name: userName,
+      },
+      {
+        headers: {
+          'x-api-key': 'ma-cle',
+        },
+      }
+    )
     .then(({ data }) => data)
 }
 
 function getUsers() {
-  return axios.get(`${API_BASE_URL}/users`).then(({ data }) => data)
+  return axios
+    .get(`${API_BASE_URL}/users`, {
+      headers: {
+        'x-api-key': 'ma-cle',
+      },
+    })
+    .then(({ data }) => data)
 }
 
 function showUsers() {
