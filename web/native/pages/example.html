@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      #result {
+        font-style: italic;
+      }
+      .info {
+        color: green;
+      }
+      .error {
+        color: red;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Test API</h1>
+
+    <button onclick="showUsers()">Récupérer la liste des utilisateurs</button>
+
+    <form id="signin-form">
+      <label>
+        Nom de l'utilateur:
+        <input id="username" type="text" placeholder="Bernard" name="name" />
+      </label>
+      <input id="lastname" type="text" placeholder="DUPONT" name="lastname" />
+
+      <button type="submit">Créer l'utilisateur</button>
+    </form>
+
+    <div id="result"></div>
+
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"
+      integrity="sha512-bZS47S7sPOxkjU/4Bt0zrhEtWx0y0CRkhEp8IckzK+ltifIIE9EMIMTuT/mEzoIMewUINruDBIR/jJnbguonqQ=="
+      crossorigin="anonymous"
+    ></script>
+    <script src="../scripts/index.js"></script>
+  </body>
+</html>
